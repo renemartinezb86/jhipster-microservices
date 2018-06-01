@@ -1,7 +1,7 @@
 version: '2'
 services:
     gateway-app:
-        image: gateway
+        image: rbravet/gateway
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
@@ -21,7 +21,7 @@ services:
         image: elasticsearch:2.4.6
     
     microservice-app:
-        image: microservice
+        image: rbravet/microservice
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
